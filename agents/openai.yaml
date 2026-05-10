@@ -1,0 +1,4 @@
+interface:
+  display_name: "Storyboard Prompt Generator"
+  short_description: "Generate storyboard style visual prompt sets from an idea."
+  default_prompt: "Use $storyboard-prompt-generator to turn my idea into a set of storyboard style image prompts."
