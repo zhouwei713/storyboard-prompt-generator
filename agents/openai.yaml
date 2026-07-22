@@ -1,4 +1,4 @@
 interface:
-  display_name: "Storyboard Prompt Generator"
-  short_description: "Generate storyboard style visual prompt sets from an idea."
-  default_prompt: "Use $storyboard-prompt-generator to turn my idea into a set of storyboard style image prompts."
+  display_name: "16s Vertical Storyboard Generator"
+  short_description: "Create a two-scene 9:16 product-video storyboard with voice and Flow-ready prompts."
+  default_prompt: "Use $storyboard-prompt-generator to turn my product image or idea into a 16-second vertical 9:16 storyboard: exactly two connected 8-second scenes, natural Bahasa Melayu voice-over, no Chinese text, and no on-screen captions."

@@ -1,157 +1,84 @@
 # Storyboard Prompt Generator
 
-## 中文说明
+## Bahasa Melayu
 
-Storyboard Prompt Generator 是一个 Codex skill。它可以把用户输入的一个创意想法，直接扩展成一组故事板类型的图像生成提示词。
+`Storyboard Prompt Generator` ialah Codex skill untuk menukar satu idea, gambar produk, atau deskripsi produk kepada **storyboard video menegak 9:16 selama 16 saat**.
 
-这个 skill 适合生成广告故事板，导演分镜板，产品视觉规划表，角色设定板，场景设计板，社交媒体内容板，活动视觉提案板和品牌前期制作板。
+Ia direka untuk TikTok, Reels, Shorts, iklan produk, dan aliran kerja image-to-video seperti Google Flow.
 
-## 主要能力
+### Apa yang dihasilkan
 
-1. 根据一个想法生成多条可复制的完整提示词。
+Setiap permintaan menghasilkan:
 
-2. 默认输出 8 条故事板类型提示词。
+1. Satu arah kreatif ringkas.
+2. Fakta produk yang digunakan — berdasarkan imej atau maklumat pengguna sahaja.
+3. Arahan suara/audio.
+4. Tepat **2 scene berurutan**, setiap satu **8 saat**:
+   - Scene 1: `0:00–0:08` — hook atau pengenalan produk.
+   - Scene 2: `0:08–0:16` — demo, payoff dan CTA semula jadi.
+5. Prompt image-to-video yang boleh terus digunakan bagi setiap scene.
+6. Arahan kesinambungan dan negative prompt.
 
-3. 支持中文内容，适合生成带有中文标题和分区标签的视觉规划图。
+Output mengikuti bahasa pengguna. Untuk arahan Melayu, dialog, voice-over, dan arahan visual adalah dalam Bahasa Melayu Malaysia. Ia tidak menggunakan teks atau label bahasa Cina melainkan pengguna memintanya secara khusus.
 
-4. 自动覆盖不同角度，例如商业广告，产品展示，动漫分镜，社媒内容，品牌提案，活动策划，角色设定和信息图。
-
-5. 每条提示词都会强调 16:9 横版，清晰分区，故事板区域，色卡，材质样本，灯光情绪，镜头类型和避免真实品牌 Logo。
-
-## 使用示例
-
-```text
-Use $storyboard-prompt-generator to turn “泰国冰汽水广告” into a set of storyboard style image prompts.
-```
-
-```text
-使用 $storyboard-prompt-generator，把“未来城市智能雨伞广告”扩展成 8 条故事板视觉规划提示词。
-```
+### Contoh
 
 ```text
-使用 $storyboard-prompt-generator，围绕“儿童科学实验课程”生成一组教育类视觉规划提示词。
+Use $storyboard-prompt-generator to turn this toothpaste product image into a 16-second TikTok animation. Make the toothpaste tube speak in Bahasa Melayu.
 ```
 
-## 输出内容
+Hasilnya ialah storyboard 2 scene menegak: produk yang sama kekal konsisten, ada dialog/suara, arahan bunyi, pergerakan kamera, dan prompt Flow yang berasingan untuk Scene 1 dan Scene 2.
 
-每次调用通常会得到：
+### Peraturan penting
 
-1. 一组提示词标题。
-
-2. 一个统一创意方向。
-
-3. 多条可直接复制到图像生成工具中的完整提示词。
-
-4. 每条提示词包含适用场景，例如广告故事板，产品规划板，动画分镜板，活动视觉板或品牌提案板。
-
-## 安装方式
-
-将本仓库放入 Codex skills 目录：
-
-```powershell
-git clone https://github.com/zhouwei713/storyboard-prompt-generator.git
-Copy-Item .\storyboard-prompt-generator "$env:USERPROFILE\.codex\skills\" -Recurse
-```
-
-安装后，在 Codex 中使用 `$storyboard-prompt-generator` 调用。
-
-## 文件结构
-
-```text
-storyboard-prompt-generator
-  SKILL.md
-  agents
-    openai.yaml
-  references
-    prompt-patterns.md
-```
-
-## 设计原则
-
-1. 用户只需要输入一个想法。
-
-2. skill 直接输出提示词组。
-
-3. 提示词要像真实广告导演或美术指导使用的前期制作板。
-
-4. 画面要求专业，清晰，信息密度高，叙事连贯。
-
-5. 生成图像时避免真实品牌 Logo，乱码文字，过度拥挤和无关人物抢镜。
+- Menegak **9:16**, bukan horizontal 16:9.
+- Tepat **2 scene × 8 saat = 16 saat**.
+- Setiap scene ada arahan voice-over/dialogue dan audio.
+- Jangan reka claim, harga, bahan, result, UI, kad, teks atas skrin, atau produk tambahan.
+- Kekalkan rupa, warna, bentuk, dan label produk berpandukan gambar rujukan.
+- Storyboard siap tidak bermaksud video sudah dirender.
 
 ## English
 
-Storyboard Prompt Generator is a Codex skill that turns one creative idea into a set of storyboard style image generation prompts.
+`Storyboard Prompt Generator` is a Codex skill that turns one idea, product image, or product description into a **16-second vertical 9:16 video storyboard**.
 
-It is useful for advertising storyboards, director boards, product visual planning boards, character reference boards, scene design boards, social content boards, event proposal boards, and brand preproduction boards.
+It is designed for TikTok, Reels, Shorts, product ads, and image-to-video workflows such as Google Flow.
 
-## Key Features
+### Output
 
-1. Generate multiple copy ready prompts from one idea.
+Each request returns:
 
-2. Default to 8 storyboard style prompts.
+1. A concise creative direction.
+2. Product facts used, based only on the image or user input.
+3. Voice and audio direction.
+4. Exactly **two sequential 8-second scenes**:
+   - Scene 1: `0:00–0:08` — hook or product introduction.
+   - Scene 2: `0:08–0:16` — demo, payoff, and a natural CTA.
+5. One copy-ready image-to-video prompt per scene.
+6. Continuity and negative-prompt rules.
 
-3. Support Chinese visual board labels and concise in image text.
+The output follows the user's language. Malay requests receive natural Bahasa Melayu Malaysia dialogue and voice-over. Chinese text or labels are never added unless explicitly requested.
 
-4. Cover varied creative directions, including commercial advertising, product planning, animation storyboard, social media content, brand proposal, event planning, character reference, and infographic style boards.
-
-5. Keep each prompt focused on a 16:9 horizontal board, clear layout, storyboard panels, color palette, material samples, lighting notes, camera types, and logo safety.
-
-## Example Usage
-
-```text
-Use $storyboard-prompt-generator to turn “Thai ice soda commercial” into a set of storyboard style image prompts.
-```
-
-```text
-Use $storyboard-prompt-generator to generate visual planning prompts for “a futuristic smart umbrella campaign”.
-```
+### Example
 
 ```text
-Use $storyboard-prompt-generator to create education themed storyboard prompts for “children's science experiment class”.
+Use $storyboard-prompt-generator to turn this toothpaste product image into a 16-second TikTok animation. Make the toothpaste tube speak in Bahasa Melayu.
 ```
 
-## Typical Output
+### Non-negotiable constraints
 
-Each run usually returns:
+- Vertical **9:16**, never horizontal 16:9.
+- Exactly **2 scenes × 8 seconds = 16 seconds**.
+- Every scene includes dialogue/voice-over and audio direction.
+- No invented claims, prices, ingredients, results, UI, cards, on-screen text, or extra products.
+- Preserve the referenced product's visible identity.
+- A completed storyboard is not a rendered video.
 
-1. A prompt set title.
-
-2. A concise creative direction.
-
-3. Multiple complete prompts ready for image generation tools.
-
-4. A use case label for each prompt, such as advertising storyboard, product planning board, animation storyboard, event visual board, or brand proposal board.
-
-## Installation
-
-Place this repository in your Codex skills directory:
-
-```powershell
-git clone https://github.com/zhouwei713/storyboard-prompt-generator.git
-Copy-Item .\storyboard-prompt-generator "$env:USERPROFILE\.codex\skills\" -Recurse
-```
-
-Then invoke it in Codex with `$storyboard-prompt-generator`.
-
-## Project Structure
+## Files
 
 ```text
 storyboard-prompt-generator
   SKILL.md
-  agents
-    openai.yaml
-  references
-    prompt-patterns.md
+  agents/openai.yaml
+  references/prompt-patterns.md
 ```
-
-## Design Notes
-
-1. The user should only need to provide one idea.
-
-2. The skill should return a prompt set directly.
-
-3. The prompts should feel like professional preproduction boards used by advertising directors or art directors.
-
-4. The visual output should be polished, clear, information rich, and narratively coherent.
-
-5. Prompts should avoid real brand logos, unreadable random text, overcrowded layouts, and irrelevant characters.

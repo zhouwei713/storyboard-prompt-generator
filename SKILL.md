@@ -1,98 +1,100 @@
 ---
 name: storyboard-prompt-generator
-description: Generate a set of storyboard style image prompts from a user's idea. Use when the user asks for visual planning prompts, storyboard prompts, advertising storyboard prompts, director boards, concept boards, preproduction boards, visual proposal prompts, or says they have an idea and want multiple prompt options in the same style as a professional storyboard or visual planning table.
+description: Generate a two-scene, 16-second vertical 9:16 product-video storyboard prompt from a user's idea or product image. Use for TikTok, Reels, Shorts, product ads, animation concepts, voice-over scripts, scene prompts, or Flow-ready production planning.
 ---
 
 # Storyboard Prompt Generator
 
 ## Core Behavior
 
-Turn the user's idea into a group of complete, copy ready image generation prompts.
+Turn one product image, product description, or creative idea into one production-ready storyboard for a **16-second vertical 9:16 short video**.
 
-Default to Chinese output when the user writes in Chinese. Default to 8 prompts unless the user asks for a different number.
+Write in the user's language. For Malay requests, use natural **Bahasa Melayu Malaysia**. Never require, add, or recommend Chinese language labels, Chinese dialogue, or Chinese text in the visual.
 
-Do not make a long plan. Give the prompt set directly. Ask a question only when there is no usable idea.
+Create exactly **two sequential scenes**, each **8 seconds**:
 
-Do not generate images unless the user explicitly asks to generate images.
+- Scene 1: `0:00–0:08` — hook, problem/desire, or product introduction.
+- Scene 2: `0:08–0:16` — product demonstration, payoff, and natural closing CTA.
+
+Keep one coherent product identity across both scenes. Scene 2 must continue naturally from Scene 1 rather than reset to a new setting, actor, or product.
+
+Do not generate images or video unless the user explicitly asks. Provide the storyboard and copy-ready scene prompts first.
 
 ## Output Shape
 
 Use this structure:
 
-1. Short title for the prompt set.
-2. One sentence describing the chosen creative direction.
-3. Numbered prompt blocks.
+1. **Storyboard title**
+2. **Creative direction** — one concise sentence naming the style and target feeling.
+3. **Product facts used** — only details visible in the supplied image or stated by the user.
+4. **Voice direction** — language, voice character, energy, pace, and audio intent.
+5. **Scene 1 (0:00–0:08)**
+   - Purpose / hook
+   - Vertical visual and camera plan
+   - Product action
+   - Emotion
+   - Exact spoken line / voice-over in the user's language
+   - Sound design / music cue
+   - Copy-ready image-to-video prompt
+6. **Scene 2 (0:08–0:16)**
+   - Continuation / payoff / CTA
+   - Vertical visual and camera plan
+   - Product action
+   - Emotion
+   - Exact spoken line / voice-over in the user's language
+   - Sound design / music cue
+   - Copy-ready image-to-video prompt
+7. **Global continuity and negative prompt**
 
-Each prompt block should include:
+## Mandatory Video Rules
 
-Prompt name.
+- Every scene is vertical **9:16**, designed for TikTok, Reels, and Shorts. Never request a horizontal 16:9 board.
+- Include exactly two scenes and exactly 16 seconds total, unless the user explicitly overrides both values.
+- Include voice/audio direction for every storyboard. State whether the product itself speaks, a narrator speaks, or the scene relies on ASMR; do not leave audio unspecified.
+- For an animated product-character request, the product may move, emote, or speak, but preserve its visible shape, color, packaging, and label details from the reference image.
+- Use only visible product facts and user-provided facts. Do not invent results, clinical claims, ingredients, pricing, discounts, packaging, phones, user-interface cards, logos, or text overlays.
+- Do not place embedded captions, subtitles, title cards, readable text, fake UI, watermarks, or unrelated props inside the generated visual unless the user explicitly asks for them.
+- Keep camera actions concrete: close-up, macro, top-down, handheld push-in, slow orbit, rack focus, or product hero reveal.
 
-Full prompt text in one copy ready paragraph.
+## Style Directions
 
-Optional use case label such as advertising storyboard, product planning board, animation storyboard, game concept board, event visual board, social content board, or brand proposal board.
+Select or follow the user's requested direction. Keep the product fixed and alter the storytelling/camera language rather than inventing a new product.
 
-## Prompt Requirements
+- **Commercial product ad**: fast clear hook, product hero framing, benefit shown through visible action.
+- **Animation / product character**: a product becomes a believable character with subtle expressive motion and spoken dialogue.
+- **Product design demo**: clean close-ups, practical demonstration, clear tactile interaction.
+- **Social short video**: strong first-second hook, crisp pacing, authentic mobile-native framing.
+- **Premium brand**: elegant lighting, restrained movement, polished hero reveal.
+- **Campaign / lifestyle**: one relatable everyday moment, then a tangible product interaction.
+- **Character / POV story**: short emotional POV with the product as a natural part of the action.
+- **Infographic-free explainer**: communicate through product action and voice-over, never on-screen graphics.
 
-Each prompt must ask for a 16:9 horizontal visual planning image.
+## Prompt Template
 
-Each prompt must feel like a professional production board, director storyboard, brand proposal board, or advertising visual plan.
+Write each image-to-video prompt as a single compact paragraph with:
 
-Each prompt should include:
+- `Vertical 9:16, 8-second Scene N`
+- the exact referenced product and its visible identity
+- setting, lighting, action, camera movement, and emotional tone
+- spoken line and audio intent
+- continuity link to the other scene
+- restrictions: no text, subtitles, UI, cards, watermarks, extra products, or unsupported claims
 
-Top title area.
+## Completion Checklist
 
-Clear divided information board layout.
+Before returning a storyboard, verify:
 
-Main concept or art direction area.
+- [ ] Bahasa follows the user's language; no Chinese text or labels are present unless explicitly requested.
+- [ ] Exactly two scenes are included: 0:00–0:08 and 0:08–0:16.
+- [ ] Both scenes are vertical 9:16 and form one continuous video.
+- [ ] Both scenes have exact voice-over/dialogue and sound direction.
+- [ ] Every claim is visible on the product or supplied by the user.
+- [ ] Product identity stays consistent and no unwanted UI/text/props are requested.
 
-Product, character, service, place, or scene reference area.
+## Common Pitfalls
 
-Storyboard area with multiple panels.
-
-Color palette or material samples.
-
-Scene movement map or shot route when useful.
-
-Lighting, mood, keywords, audio tone, and camera type areas when useful.
-
-Short readable Chinese text inside the image.
-
-Specific visual materials such as glass, ice, water, metal, paper, fabric, neon, smoke, sunlight, rain, dust, food texture, screen glow, or other context relevant details.
-
-Avoid true brand logos, messy unreadable small text, excess characters, and generic placeholder scenes.
-
-## Variation Strategy
-
-When the user gives one idea, produce varied prompts from different angles:
-
-Commercial advertising board.
-
-Animation or comic storyboard board.
-
-Product and scene design board.
-
-Social media or short video planning board.
-
-Premium brand proposal board.
-
-Event or campaign visual board.
-
-Character or worldbuilding reference board.
-
-Information graphic or service flow board.
-
-Pick the most relevant mix for the user's idea.
-
-## Direct Expansion Rules
-
-If the user asks for more prompts, continue with new directions and avoid repeating earlier variants.
-
-If the user asks to save the prompts, create a Markdown file in the current workspace and include prompt titles, use cases, and full prompt text.
-
-If the user asks for a specific style, keep the user's subject fixed and vary the visual language around that style.
-
-If the user asks for a specific industry, keep all prompts tied to that industry and vary audience, channel, format, and art direction.
-
-## Reference
-
-For broader category ideas and reusable prompt patterns, read `references/prompt-patterns.md`.
+- Do not output a six-to-eight-panel horizontal production board; this skill is for a two-scene vertical video.
+- Do not use Chinese labels as a generic visual-planning convention.
+- Do not make Scene 2 a reset with a different room, person, or product.
+- Do not turn spoken dialogue into embedded subtitles.
+- Do not claim a render is ready when only the storyboard/prompt is ready.
