@@ -1,155 +1,118 @@
-# Prompt Patterns
+# Video Storyboard Prompt Patterns
 
-Use this reference when the user asks for many prompts, broad coverage, or more variety.
+Use this reference for TikTok, Reels, Shorts, product ads, animation concepts, voice-over direction, and Google Flow-ready prompts.
 
-## Core Template
+## Fixed Production Format
 
-Generate a 16:9 horizontal high resolution visual planning board. Theme: “[idea specific title]”. The image should look like a professional director storyboard, advertising preproduction board, and brand visual proposal combined. Use a dark blue, deep teal, charcoal, or theme appropriate information board background with thin white divider lines. Include a large top title, clear section labels, concise Chinese text, color palette, material samples, scene or product references, camera plan, mood tags, and a large storyboard area with 6 to 8 panels. Keep the visual style polished, commercial, readable, coherent, and not overcrowded. Avoid real brand logos and avoid unreadable random text.
+- Format: **vertical 9:16**.
+- Total duration: **16 seconds**.
+- Scene count: **exactly two sequential scenes**.
+- Scene length: **8 seconds per scene**.
+- Language: follow the user's language. Use natural Bahasa Melayu Malaysia for Malay requests. Do not add Chinese labels or dialogue unless specifically requested.
+- Audio: every scene must specify spoken dialogue/voice-over and sound or music direction.
 
-## Common Sections
+## Two-Scene Story Arc
 
-Art direction.
+### Scene 1 — 0:00–0:08
 
-Audience or character reference.
+Use one focused opening:
 
-Product, service, place, or object design.
+- Relatable problem or desire.
+- Product hero reveal.
+- Product-character greeting for animation.
+- Tactile close-up for ASMR.
+- A single clear product action.
 
-Scene design.
+Required fields:
 
-Movement map or shot route.
+- Hook.
+- Vertical camera framing and movement.
+- Product action.
+- Emotion.
+- Exact spoken line in the output language.
+- Audio/sound cue.
+- Scene-specific image-to-video prompt.
 
-Storyboard.
+### Scene 2 — 0:08–0:16
 
-Lighting, mood, and style notes.
+Continue directly from Scene 1:
 
-Emotion and keywords.
+- Demonstrate one visible use or product interaction.
+- Deliver the emotional or practical payoff.
+- End with a natural spoken CTA or closing thought.
+- Preserve the same product, setting, visual treatment, and character/hand identity whenever applicable.
 
-Audio and tone.
+Required fields:
 
-Camera types.
+- Continuation link.
+- Vertical camera framing and movement.
+- Product action.
+- Emotion.
+- Exact spoken line in the output language.
+- Audio/sound cue.
+- Scene-specific image-to-video prompt.
 
-## Storyboard Beats
+## Prompt Core Template
 
-Use 6 to 8 beats. For advertising and product ideas:
+```text
+Vertical 9:16, 8-second Scene [1 or 2] for a TikTok/Reels/Shorts product video. Use the supplied [product] reference and preserve its exact visible shape, color, packaging, and label details. [Describe only one setting, action, camera move, lighting, and emotion.] Spoken audio in [language]: “[exact line]”. Sound: [sound or music cue]. [For Scene 2: explicitly continue from Scene 1 with the same setting/product/character.] No embedded captions, subtitles, title cards, logos, UI, cards, watermarks, extra products, phones, unrelated props, or unsupported claims.
+```
 
-Problem or desire.
+## Style Families
 
-Discovery.
+### Commercial product ad
 
-First interaction.
+- Bright natural product hero lighting.
+- Hook first, one visible action, concise benefit phrased only from available facts.
+- Voice: friendly, confident, short.
 
-Material or feature closeup.
+### Animation / product character
 
-Experience moment.
+- The actual product may make subtle expressive movement and speak.
+- Do not give it a generic cartoon redesign; retain visible identity from the supplied product image.
+- Voice: warm, playful, believable—not exaggerated unless requested.
 
-Emotional release.
+### Product design demo
 
-Social proof or shared use.
+- Clean tabletop or real-world setting.
+- Product handling and close-up details.
+- Voice: factual, calm, practical.
 
-Hero product or callout ending.
+### Social-native short video
 
-For events:
+- Immediate action in the first second.
+- Handheld camera, quick but readable progression.
+- Voice: conversational Malay creator energy.
 
-Arrival.
+### Premium brand
 
-Entrance visual.
+- Soft directional lighting, clean composition, controlled camera movement.
+- Voice: restrained, elegant, calm.
 
-Main activity.
+### Campaign / lifestyle
 
-Interaction.
+- One relatable everyday moment.
+- Product naturally resolves a visible moment or desire.
+- Voice: relatable and intimate.
 
-Peak moment.
+### Character / POV story
 
-Photo moment.
+- One clear emotional POV; never introduce complex plot resets.
+- Product supports the story naturally.
+- Voice: first-person or intimate narrator.
 
-Community moment.
+### ASMR explainer
 
-Final key visual.
-
-For service or software:
-
-Pain point.
-
-User opens service.
-
-Guided setup.
-
-Core function.
-
-Result appears.
-
-Collaboration or confirmation.
-
-Trust signal.
-
-Interface hero ending.
-
-## Useful Variant Families
-
-Commercial advertising storyboard.
-
-Director shot planning board.
-
-Product hero visual board.
-
-Social media content matrix board.
-
-Live commerce or ecommerce conversion board.
-
-Brand campaign proposal board.
-
-Character reference and style board.
-
-Scene design and worldbuilding board.
-
-Event execution and guest route board.
-
-Information graphic and service flow board.
-
-## Visual Style Families
-
-Bright commercial photography.
-
-High quality anime advertising.
-
-Premium magazine editorial.
-
-Retro film commercial.
-
-Cyberpunk neon.
-
-Fresh flat illustration.
-
-Three dimensional toy style.
-
-Clay stop motion style.
-
-Pixel art.
-
-Watercolor picture book.
-
-Paper cut collage.
-
-Minimal premium brand style.
-
-Tropical high saturation illustration.
-
-Futuristic interface style.
-
-Epic cinematic poster style.
+- Macro textures, physical interaction, intentional sound design.
+- Spoken line can be minimal; ASMR sounds remain primary.
+- No on-screen text or infographic graphics.
 
 ## Quality Checklist
 
-The generated prompt should preserve the user's core idea.
-
-The prompt should specify one coherent subject, product, place, or service.
-
-The prompt should include section layout and storyboard count.
-
-The prompt should name concrete visual materials and lighting.
-
-The prompt should ask for readable short Chinese labels.
-
-The prompt should include logo safety and clutter control.
-
-The prompt should make the final image useful as a real production planning board.
+- Product identity is fixed to the supplied reference.
+- Every scene is vertical 9:16, 8 seconds, and uses one primary action.
+- Story runs continuously from 0:00 to 0:16 with no reset.
+- Both scenes specify spoken audio and sound direction.
+- No Chinese labels/text unless explicitly requested.
+- No horizontal board, 6–8 panel layout, fake UI, cards, watermark, embedded text, or invented product claims.
+- The storyboard output is clearly described as prompts/plan, not a finished render.
